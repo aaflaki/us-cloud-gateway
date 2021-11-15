@@ -1,0 +1,33 @@
+#spring:
+#  application:
+#    name: API-GATEWAY
+#  cloud:
+#    gateway:
+#      routes:
+#        - id: product-service
+#          uri: lb://product-service
+#          predicates:
+#            - Path=/products/**
+#        - id: company-service
+#          uri: lb://company-service
+#          predicates:
+#            - Path=/companies/**
+#        - id: opportunity-service
+#          uri: lb://opportunity-service
+#          predicates:
+#            - Path=/opportunities/**
+#
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka
+#  instance:
+#    hostname: localhost
+#
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: hystrix.stream
